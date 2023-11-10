@@ -5,11 +5,6 @@ export default class Controller {
     this.index = 0;
   }
 
-  play() {
-    // music play
-    console.log("music playing---");
-  }
-
   prev() {
     this.index--;
     if (this.index < 0) {
