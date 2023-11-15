@@ -1,0 +1,61 @@
+.side-container-contents{
+  width: 100%;
+  height: 80%;
+
+  color: #7e7e7e;
+  background-color: #E7E2E2;
+}
+
+.music-wrapper{
+  width: 100%;
+  height: 80px;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.delete-button-area{
+  width: 12%;
+  height: 100%;
+  margin-left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.music-album{
+  width: 10%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.music-album img{
+  width: 70%;
+  height: 70%;
+  object-fit:contain;
+}
+.music-info{
+  position: relative;
+  width: 50%;
+  height: 100%;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  
+  .name{
+    color: #000;
+    font-weight: 600;
+    margin-left: 20px;
+  }
+  .artist{
+    margin-left: 20px;
+  }
+}
+.music-duration{
+  position: relative;
+  width: 12%;
+  left: 10px;
+}

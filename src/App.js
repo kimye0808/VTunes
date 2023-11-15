@@ -1,10 +1,10 @@
 import './App.css';
-import ControlBar from "./component/ControlBar";
+import VTunes from './VTunes';
 
 function App() {
   return (
     <div className="App">
-      <ControlBar />
+      <VTunes />
     </div>
   );
 }

@@ -1,9 +1,10 @@
 export default class Music {
-  constructor(name, lyrics, duration, artist, album) {
-    this.name = name;
+  constructor(musicName, lyrics, artist, albumTitle, duration, sourceOfPath) {
+    this.musicName = musicName;
     this.lyrics = lyrics;
-    this.duration = duration;
     this.artist = artist;
-    this.album = album;
+    this.albumTitle = albumTitle;
+    this.duration = duration;
+    this.sourceOfPath = sourceOfPath;
   }
 }
