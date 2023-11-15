@@ -5,14 +5,15 @@
   "main": "main.js",
   "homepage": "./",
   "build": {
-    "productName": "react-electron",
-    "asar": true,
-    "appId": "org.sss.electron-react"
+    "productName": "VTunes",
+    "asar": false,
+    "appId": "com.vtunes"
   },
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "music-metadata": "^7.14.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-h5-audio-player": "^3.9.0",

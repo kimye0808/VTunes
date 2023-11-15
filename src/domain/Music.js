@@ -1,10 +1,14 @@
 export default class Music {
-  constructor(musicName, lyrics, artist, albumTitle, duration, sourceOfPath) {
-    this.musicName = musicName;
+  constructor(name, lyrics, duration, artist, album, path) {
+    this.name = name;
     this.lyrics = lyrics;
     this.artist = artist;
-    this.albumTitle = albumTitle;
-    this.duration = duration;
-    this.sourceOfPath = sourceOfPath;
+    this.album = album;
+    this.path = path;
   }
+
+  static from(json) {
+    return Object.assign(new Music(), json);
+  }
+
 }

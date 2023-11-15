@@ -1,30 +1,31 @@
 export default class Playlist {
-  constructor(number, playlistName, listOfMusic) {
-    this.numberOfMusic = number;
-    this.playlistName = playlistName;
-    this.listOfMusic = listOfMusic;
+  constructor(name, list) {
+    this.name = name;
+    this.list = list;
+  }
+
+  static from(json) {
+    return Object.assign(new Playlist(), json);
   }
 
   addMusic(music) {
-    this.listOfMusic.push(music);
-    this.numberOfMusic = this.listOfMusic.length;
+    this.list.push(music);
   }
 
   deleteMusic(index) {
-    if (index >= 0 && index < this.listOfMusic.length) {
-      this.listOfMusic.splice(index, 1);
-      this.numberOfMusic = this.listOfMusic.length;
+    if (index >= 0 && index < this.list.length) {
+      this.list.splice(index, 1);
     }
   }
 
   adjustOrder(from, to) {
-    if (from >= 0 && from < this.listOfMusic.length && to >= 0 && to < this.listOfMusic.length) {
-      const movedMusic = this.listOfMusic.splice(from, 1)[0];
-      this.listOfMusic.splice(to, 0, movedMusic);
+    if (from >= 0 && from < this.list.length && to >= 0 && to < this.list.length) {
+      const movedMusic = this.list.splice(from, 1)[0];
+      this.list.splice(to, 0, movedMusic);
     }
   }
 
   renamePlaylist(name) {
-    this.playlistName = name;
+    this.name = name;
   }
 }
