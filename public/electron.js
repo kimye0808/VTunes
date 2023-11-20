@@ -12,9 +12,13 @@ function createWindow() {
       contextIsolation: false,
     }
   });
-  win.loadURL("http://localhost:3000");
-  // win.loadFile('./public/index.html');
-  // win.webContents.openDevTools();
+
+  if (isDev) {
+    win.loadURL("http://localhost:3000");
+    win.webContents.openDevTools();
+  } else {
+    win.loadFile('./build/index.html');
+  }
 }
 app.whenReady().then(() => {
   protocol.registerFileProtocol('local', (request, callback) => {

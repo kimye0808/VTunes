@@ -2,12 +2,28 @@
   "name": "vtunes",
   "version": "0.1.0",
   "private": true,
-  "main": "main.js",
+  "main": "public/electron.js",
   "homepage": "./",
   "build": {
+    "appId": "com.vtunes",
     "productName": "VTunes",
-    "asar": false,
-    "appId": "com.vtunes"
+    "asar": true,
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64",
+            "ia32"
+          ]
+        }
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true
+    }
   },
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
@@ -20,14 +36,16 @@
     "react-redux": "^8.1.3",
     "react-scripts": "5.0.1",
     "redux": "^4.2.1",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "electron-is-dev": "^2.0.0"
   },
   "scripts": {
     "start": "concurrently \"npm run electron\" \"react-scripts start\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "electron": "electron . && wait-on http://localhost:3000"
+    "electron": "electron . && wait-on http://localhost:3000",
+    "electron-build": "npm run build --em.main=build/electron.js && electron-builder build"
   },
   "eslintConfig": {
     "extends": [
@@ -52,7 +70,6 @@
     "concurrently": "^8.2.2",
     "electron": "^27.0.2",
     "electron-builder": "^24.6.4",
-    "electron-is-dev": "^2.0.0",
     "wait-on": "^7.0.1"
   }
 }
