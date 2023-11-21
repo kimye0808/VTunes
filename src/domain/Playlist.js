@@ -28,4 +28,11 @@ export default class Playlist {
   renamePlaylist(name) {
     this.name = name;
   }
+
+  toPlainObject() {
+    return {
+      name: this.name,
+      list: this.list,
+    };
+  }
 }

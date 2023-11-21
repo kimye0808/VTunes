@@ -1,26 +1,22 @@
 import React from "react";
 import styles from "../../../styles/SideContainer.module.css";
-import SideContainerHeader from "./SideContainer/SideContainerHeader";
-import SideContainerContents from "./SideContainer/SideContainerContents";
 import SideContainerFooter from "./SideContainer/SideContainerFooter";
+import SideContainerHeaderContainer from "../../../containers/SideContainerHeaderContainer";
+import SideContainerContentsContainer from "../../../containers/SideContainerContentsContainer";
+import SideContainerFooterContainer from "../../../containers/SideContainerFooterContainer";
 
-const SideContainer = ({currentPlaylist, currentMusic, onCurrentPlaylist, onCurrentMusic, 
-  isDeleteClick, onIsDeleteClick, isSearch, searchResult, selectedPlaylist}) =>{
+const SideContainer = ({isDeleteClick, onIsDeleteClick, userInput }) =>{
   return (
     <div className={styles["side-container"]}>
-      <SideContainerHeader selectedPlaylist={selectedPlaylist}/>
-      <SideContainerContents 
-        currentPlaylist={currentPlaylist} 
-        currentMusic={currentMusic} 
-        onCurrentPlaylist={onCurrentPlaylist}
-        onCurrentMusic={onCurrentMusic}
-        
+      <SideContainerHeaderContainer/>
+      <SideContainerContentsContainer
         isDeleteClick={isDeleteClick}
-        isSearch = {isSearch}
-        searchResult={searchResult}
-        selectedPlaylist={selectedPlaylist}
+        userInput={userInput}
       />
-      <SideContainerFooter currentPlaylist={currentPlaylist} onCurrentPlaylist={onCurrentPlaylist} onIsDeleteClick={onIsDeleteClick}/>
+      <SideContainerFooterContainer
+        isDeleteClick={isDeleteClick}
+        onIsDeleteClick={onIsDeleteClick}
+      />
     </div>
   );
 };

@@ -1,12 +1,12 @@
 import styles from './VTunes.module.css';
-import ControlBar from "./component/ControlBar";
 import Container from './component/Container';
+import ControlBarContainer from './containers/ControlBarContainer';
 
 const VTunes = () => {
   return (
     <div className={styles.vtunes}>
       <Container />
-      <ControlBar />
+      <ControlBarContainer />
     </div>
   );
 };

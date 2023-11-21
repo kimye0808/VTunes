@@ -21,7 +21,7 @@
 
   background-color: #d9d9d9;
   box-sizing: border-box;
-  z-index: 1;
+  z-index: 2;
   animation: expandAnimation 0.5s ease-out;
 }
 
@@ -39,7 +39,7 @@
   top: 0;
   width: 5%;
   height: 10%;
-  z-index: 2;
+  z-index: 3;
 }
 .playlist-menu img{
   width: 100%;

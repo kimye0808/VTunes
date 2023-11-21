@@ -5,7 +5,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  outline: 2px solid black;/*임시*/
 }
 .timer{
   width: 30%;

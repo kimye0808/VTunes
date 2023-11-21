@@ -7,7 +7,7 @@ import plEnter from "../../../assets/base/plEnter.png";
 import plEnterHover from "../../../assets/hover/plEnter.png";
 import plEnterClick from "../../../assets/hover/plEnter.png";
 
-const PlaylistItem = ({ buttonFlag, key, playlistData, onSelectedPlaylist}) => {
+const PlaylistItem = ({ buttonFlag, playlistData, onPlMenuClick, onSelectedPlaylist, onDeletePlaylist, onIsCurrentPlaylistViewed}) => {
   const [imgDeleterClick, setImgDeleterClick] = useState(false);
   const [imgDeleterHover, setImgDeleterHover] = useState(false);
   const [imgPlEnterClick, setImgPlEnterClick] = useState(false);
@@ -26,6 +26,7 @@ const PlaylistItem = ({ buttonFlag, key, playlistData, onSelectedPlaylist}) => {
             onClick={() => {
               setImgDeleterClick(true);
               setTimeout(() => setImgDeleterClick(false), 200);
+              onDeletePlaylist(playlistData.name);
             }}
             onMouseEnter={() => setImgDeleterHover(true)}
             onMouseLeave={() => setImgDeleterHover(false)}
@@ -33,8 +34,8 @@ const PlaylistItem = ({ buttonFlag, key, playlistData, onSelectedPlaylist}) => {
       )}
       </div>
       <div className={styles["playlist-info"]}>
-        <div className={styles["name"]}>{playlistData.playlistName}</div>
-        <div className={styles["songs-count"]}>{playlistData.numberOfMusic}ㆍSongs</div>
+        <div className={styles["name"]}>{playlistData.name}</div>
+        <div className={styles["songs-count"]}>{playlistData.list.length}ㆍSongs</div>
       </div>
       <div className={styles["playlist-enter"]}>
         <img
@@ -44,6 +45,8 @@ const PlaylistItem = ({ buttonFlag, key, playlistData, onSelectedPlaylist}) => {
               setImgPlEnterClick(true);
               setTimeout(() => setImgPlEnterClick(false), 100);
               onSelectedPlaylist(playlistData);
+              onIsCurrentPlaylistViewed(false);
+              onPlMenuClick(false);
             }}
             onMouseEnter={() => setImgPlEnterHover(true)}
             onMouseLeave={() => setImgPlEnterHover(false)}

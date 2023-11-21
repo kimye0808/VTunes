@@ -16,4 +16,13 @@ export default class PlaylistFileManager {
     const jsonFile = fs.readFileSync(path, "utf-8");
     return JSON.parse(jsonFile);
   }
+
+  loadAll() {
+    const files = fs.readdirSync('./resource').filter(file => file.endsWith('.json'));
+    const playlists = files.map(file => {
+      const filePath = `./resource/${file}`;
+      return this.load(filePath);
+    });
+    return playlists;
+  }
 }

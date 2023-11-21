@@ -3,7 +3,7 @@ import {useSelector} from 'react-redux';
 import Album from "../component/Container/Album";
 
 const AlbumContainer = () => {
-  const currentMusic = useSelector(({musicController})=> musicController.currentMusic);
+  const currentMusic = useSelector(state=> state.musicController.currentMusic);
   return <Album currentMusic = {currentMusic} />;
 };
 
