@@ -1,0 +1,172 @@
+.timerBox_container{
+    user-select: none;
+    position: absolute;
+    margin-top: 20%;
+    margin-left: 35%;
+    width: 30%;
+    height: 30%;
+    border: 1px #2f78ff;
+    border-radius: 21px;
+    background-color: white;
+    z-index: 1;
+}
+.timerBox_header{
+    user-select: none;
+    width: 100%;
+    height: 17%;
+    background-color: #2f78ff;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.timerBox_header img{
+    user-select: none;
+    float: left;
+    width: auto;
+    height: 90%;
+    margin-left: 1%;
+    margin-top: 1%;
+    transform: scale(100%);
+
+}
+
+.text{
+    user-select: none;
+    color: white;
+    font-size: 2.5vw;
+    font-weight: 400;
+    margin-left: 5%;
+}
+
+.timerBox_body{
+    width: 100%;
+    height: 66%;
+    background-color: #d9d9d9;
+
+}
+.timer_button-area{
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.five-button{
+    font-size: 20px;
+    font-weight: 500;
+    color: black;
+    height: 100%;
+    width: 100%;
+    border:transparent;
+}
+.fifteen-button{
+    font-size: 20px;
+    font-weight: 500;
+    color: black;
+    height: 100%;
+    width: 100%;
+    border:transparent;
+}
+.thirty-button{
+    font-size: 20px;
+    font-weight: 500;
+    color: black;
+    height: 100%;
+    width: 100%;
+    border:transparent;
+}
+.sixty-button{
+    font-size: 20px;
+    font-weight: 500;
+    color: black;
+    height: 100%;
+    width: 100%;
+    border:transparent;
+}
+
+.five-button:hover{
+    background-color: #d8d8d8;
+}
+.fifteen-button:hover{
+    background-color: #d8d8d8;
+}
+.thirty-button:hover{
+    background-color: #d8d8d8;
+}
+.sixty-button:hover{
+    background-color: #d8d8d8;
+}
+
+.five-button:active{
+    background-color: #acacac;
+}
+.fifteen-button:active{
+    background-color: #acacac;
+}
+.thirty-button:active{
+    background-color: #acacac;
+}
+.sixty-button:active{
+    background-color: #acacac;
+}
+
+
+.timerBox_footer{
+    width: 100%;
+    height: 17%;
+}
+
+.button-area{
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.confirm-button{
+    font-size: 20px;
+    font-weight: 500;
+    color: #fff;
+    height: 100%;
+    width: 50%;
+    border-bottom-left-radius: 20px;
+    background-color: #2f78ff;
+    border:transparent;
+    transition: background-color 0.3s, width 0.3s, height 0.3s; /* 트랜지션 효과 추가 */
+}
+.confirm-button:hover {
+    background-color: #2554cc;
+    width: 90%;
+    height: 100%;
+}
+.confirm-button:active {
+    background-color: #1c3c99;
+    width: 90%;
+    height: 100%;
+}
+.cancel-button{
+    font-size: 20px;
+    font-weight: 500;
+    color: #fff;
+    height: 100%;
+    width: 50%;
+    border-bottom-right-radius: 20px;
+    background-color: #FF0000;
+    border: transparent;
+    transition: background-color 0.3s, width 0.3s, height 0.3s; /* 트랜지션 효과 추가 */
+}
+.cancel-button:hover {
+    background-color: #ff6666;
+    width: 90%;
+    height: 100%;
+}
+.cancel-button:active {
+    background-color: #cc0000;
+    width: 90%;
+    height: 100%;
+}

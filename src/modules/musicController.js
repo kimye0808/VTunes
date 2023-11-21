@@ -27,6 +27,7 @@ const REPEAT_CURRENT_MUSIC = 'musicController/REPEAT_CURRENT_MUSIC';
 
 const MOD_SHUFFLE = 'musicController/MOD_SHUFFLE';
 const MOD_REPEAT_STATUS = 'musicController/MOD_REPEAT_STATUS';
+const MOD_SHOW_TIMER_BOX = 'musicController/MOD_SHOW_TIMER_BOX';
 
 const SET_IS_CURRENT_PLAYLIST_VIEWED = 'musicController/SET_IS_CURRENT_PLAYLIST_VIEWED';
 
@@ -36,7 +37,7 @@ export const loadAll = () => async dispatch => {
   try {
     const result = await window.electronApi.loadAll();
     console.log('Load All Result:', result);
-    dispatch(loadAllSuccess(result)); 
+    dispatch(loadAllSuccess(result));
   } catch (error) {
     dispatch(loadAllFailure());
     console.error('Error loading playlists:', error);
@@ -175,6 +176,10 @@ export const modRepeatStatus = (input) => ({
   type : MOD_REPEAT_STATUS,
   input
 });
+export const modShowTimerBox = (input) => ({
+  type : MOD_SHOW_TIMER_BOX,
+  input
+});
 
 export const setIsCurrentPlaylistViewed = (input) => ({
   type : SET_IS_CURRENT_PLAYLIST_VIEWED,
@@ -189,7 +194,7 @@ export const setMusicPlayerRef = (input) => ({
 
 // //repeatStatue와 shuffleStatus
 // const repeatStatus = {
-//   ON: 2, 
+//   ON: 2,
 //   CURRENT: 1,
 //   OFF: 0,
 // };
@@ -212,6 +217,7 @@ const initialState = {
   repeatStatus : 0,
   isCurrentPlaylistViewed : true,
   musicPlayerRef : null,
+  showTimerBox : true,
 }
 
 ///////////////////////////////////////////리듀서//////////////////////////////////////////////////
@@ -269,7 +275,7 @@ function musicController(state = initialState, action){
     case DELETE_PLAYLIST_FAILURE:
       alert('Failed to delete playlist.');
       return state;
-    
+
     case SET_CURRENT_PLAYLIST_SUCCESS:
       const updatedListWithImgPath = action.playlist.list.map(music => ({
         ...music,
@@ -300,7 +306,7 @@ function musicController(state = initialState, action){
         ...state,
         currentMusic : action.music
       };
-      
+
     /*add music to playlist*/
     case ADD_MUSIC_SUCCESS:
       playlist = action.payload.playlist;
@@ -441,13 +447,20 @@ function musicController(state = initialState, action){
         ...state,
         repeatStatus : action.input
       };
-    
+
+    case MOD_SHOW_TIMER_BOX:
+      return {
+        ...state,
+        showTimerBox: action.input
+      }
+
+
     case SET_IS_CURRENT_PLAYLIST_VIEWED:
       return {
         ...state,
         isCurrentPlaylistViewed : action.input
       };
-    
+
     case SET_MUSIC_PLAYER_REF:
       return{
         ...state,

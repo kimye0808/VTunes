@@ -5,7 +5,10 @@ const path = require("path")
 const musicParser = require('music-metadata')
 
 function createWindow() {
-  const mainWindow = new BrowserWindow({
+  const win = new BrowserWindow({
+    autoHideMenuBar: true,
+    //상단 메뉴바 감추기
+
     width: 1200,
     height: 800,
     minWidth: 550,
@@ -52,7 +55,7 @@ ipcMain.handle('load-all', async (event) => {
     // ./resource 폴더에서 모든 JSON 파일 로드
     const files = fs.readdirSync('./resource').filter(file => file.endsWith('.json'));
     const playlists = files.map(file => {
-      const filePath = path.join(__dirname, 'resource', file); 
+      const filePath = path.join(__dirname, 'resource', file);
       const data = fs.readFileSync(filePath, 'utf-8');
       return JSON.parse(data);
     });
@@ -177,7 +180,7 @@ async function loadMusicFile( filePath,playlistFolderPath) {
 
     if (picture && picture.length > 0) {
       const image = picture[0];
-      const imageFileName = `${title}.jpg`; 
+      const imageFileName = `${title}.jpg`;
 
       // 이미지를 playlist 폴더에 저장
       const imgPath = path.join(playlistFolderPath, imageFileName);
