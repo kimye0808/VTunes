@@ -1,0 +1,40 @@
+import React from 'react';
+import { render, screen, fireEvent } from '@testing-library/react';
+import configureStore from 'redux-mock-store';
+import { Provider } from 'react-redux';
+import PlaylistSetContainer from '../containers/PlaylistSetContainer';
+
+const mockStore = configureStore();
+
+describe('PlaylistSetContainer', () => {
+  it('renders PlaylistSetContainer component', () => {
+    // Mock the Redux store state
+    const initialState = {
+      musicController: {
+        listOfPlaylist: [
+          { name: 'Playlist 1', list: [] },
+          { name: 'Playlist 2', list: [] },
+        ],
+        // Add other state properties as needed
+      },
+    };
+
+    // Create a mock Redux store
+    const store = mockStore(initialState);
+
+    // Render the component with the mock store
+    render(
+      <Provider store={store}>
+        <PlaylistSetContainer isPlMenuClick={false} onPlMenuClick={() => {}} />
+      </Provider>
+    );
+
+    // Your assertions here
+    // For example, you can check if certain elements are rendered based on the mock store state
+    expect(screen.getByText('Playlist 1')).toBeInTheDocument();
+    expect(screen.getByText('Playlist 2')).toBeInTheDocument();
+    // Add more assertions based on your component's behavior
+  });
+
+  // Add more test cases as needed
+});

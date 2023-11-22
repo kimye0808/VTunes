@@ -4,20 +4,22 @@ const fs = require('fs');
 const path = require("path")
 const musicParser = require('music-metadata')
 
+let mainWindow; // 메인 창에 대한 참조 유지
 function createWindow() {
-  const win = new BrowserWindow({
-    autoHideMenuBar: true,
-    //상단 메뉴바 감추기
-
+  mainWindow = new BrowserWindow({
     width: 1200,
     height: 800,
     minWidth: 550,
     minHeight: 600,
     webPreferences: {
       preload: path.join(__dirname, "preload.js"),
+
     },
   });
   mainWindow.loadURL('http://localhost:3000');
+  // app.on('open-file', (event, filePath) => {
+  //   mainWindow.webContents.send('openFile', filePath);
+  // });
 }
 
 app.whenReady().then(() => {
@@ -31,6 +33,17 @@ app.whenReady().then(() => {
     }
   });
   createWindow();
+  //   // 앱이 준비되었을 때 open-file 이벤트 처리
+  // app.on('open-file', (event, filePath) => {
+  //   mainWindow.webContents.send('openFile', filePath);
+  // });
+
+  // // 활성화될 때 메인 창 생성 (macOS 전용)
+  // app.on('activate', () => {
+  //   if (mainWindow === null) {
+  //     createWindow();
+  //   }
+  // });
 });
 
 /**************************************렌더러 프로세스로부터 요청 받아서 메인 프로세스에서 작업 실행 : ipcMain************************************/

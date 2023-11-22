@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "../../../../styles/SideContainerFooter.module.css";
-import TimerSetting from "./SideContainerFooter/TimerSetting";
 import Adder from "./SideContainerFooter/Adder";
+import TimerSettingContainer from "../../../../containers/TimerSettingContainer";
 
 const SideContainerFooter = ({ 
   isDeleteClick, //deleter (-) 뜨게 하는지 안뜨게 하는지
@@ -25,7 +25,7 @@ const SideContainerFooter = ({
       onCurrentPlaylist = {onCurrentPlaylist}
       onAddMusic={onAddMusic} 
       />
-      <TimerSetting />
+      <TimerSettingContainer />
     </div>
   );
 };

@@ -96,7 +96,7 @@ const PlaylistSet = ({
             .filter(playlist => playlist.name !== "현재재생목록")
             .map((playlist, index) => (
               <div className={styles["playlist-wrapper"]} key={index}>
-                <PlaylistItem
+                <PlaylistItem 
                   buttonFlag={isDeleteClick}
                   playlistData={playlist}
                   onPlMenuClick={onPlMenuClick}//플레이리스트 선택하면 sideContainerContents보여주는 용도

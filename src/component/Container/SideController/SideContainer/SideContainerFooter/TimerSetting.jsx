@@ -1,19 +1,22 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "../../../../../styles/TimerSetting.module.css";
 import timerBase from "../../../../../assets/base/timer.png";
 import timerHover from "../../../../../assets/hover/timer.png";
 import timerClick from "../../../../../assets/onClick/timer.png";
 import binBase from "../../../../../assets/base/trashbin.png";
 import binClick from "../../../../../assets/onClick/trashbin.png";
-import {useDispatch, useSelector} from "react-redux";
-import {modShowTimerBox} from "../../../../../modules/musicController";
+import { secondsToMinutes } from "../../../../common/durationHelper";
 
-
-
-const TimerSetting = () =>{
-    const dispatch = useDispatch();
-
-    const modTimerBox = () => dispatch(modShowTimerBox(true));
+const TimerSetting = ({
+    isShowTimerBox, 
+    isStartReduceTime,  
+    restTime,
+    musicPlayerRef, 
+    onRestTime, 
+    onShowTimerBox, 
+    onReduceRestTime,
+    onIsStartReduceTime
+}) =>{
     //For timer icon
     const [imgTimerClick, setImgTimerClick] = useState(false);
     const [imgTimerHover, setImgTimerHover] = useState(false);
@@ -22,11 +25,22 @@ const TimerSetting = () =>{
     const [imgResetHover, setImgResetHover] = useState(false);
     //timer icon image
     const timerImage = imgTimerClick ? timerClick : imgTimerHover ? timerHover : timerBase;
-    //Reset-time value
-    const timeString = "00:14";
     //Reset-time trashBin image
     const binImage = imgResetClick ? binClick : binBase;
 
+    useEffect(() => {
+        let intervalId;
+      
+        if (isStartReduceTime && restTime > 0) {
+          intervalId = setInterval(() => {
+            onReduceRestTime();
+          }, 1000);
+        }
+        if (restTime === 0 && musicPlayerRef.current) {
+            musicPlayerRef.current.audio.current.pause();
+          }
+        return () => clearInterval(intervalId);
+      }, [isStartReduceTime, restTime, onReduceRestTime]);
     return (
         <div className={styles["timer-setting"]}>
             <div className={styles["button-area"]}>
@@ -36,7 +50,7 @@ const TimerSetting = () =>{
                         alt="timerImage"
                         onClick={() => {
                             setImgTimerClick(true);
-                            modTimerBox();
+                            onShowTimerBox(!isShowTimerBox);
                             setTimeout(() => {
                                 setImgTimerClick(prev=>!prev);
                             }, 250);
@@ -49,7 +63,7 @@ const TimerSetting = () =>{
             <div className={styles["reset-time"]}>
                 <div className={styles["button-area"]}>
                     <div className={styles["reset"]}>
-                        {imgResetHover ? <img
+                        {imgResetHover&&restTime !== -1 &&restTime !== 0? <img
                             src={binImage}
                             alt="reset"
                             onClick={() => {
@@ -57,6 +71,8 @@ const TimerSetting = () =>{
                                 setTimeout(() => {
                                     setImgResetClick(prev=>!prev);
                                 }, 250);
+                                onIsStartReduceTime(false);
+                                onRestTime(-1);
                             }}
 
                             onMouseEnter={() => setImgResetHover(true)}
@@ -68,7 +84,8 @@ const TimerSetting = () =>{
                                 }}
                                 onMouseEnter={() => setImgResetHover(true)}
                                 onMouseLeave={() => setImgResetHover(false)}
-                            >{timeString}</span>}
+                            >{restTime === -1 || restTime === 0 ? "00:00" :
+                            secondsToMinutes(restTime)}</span>}
                     </div>
                 </div>
             </div>

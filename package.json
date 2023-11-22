@@ -54,6 +54,7 @@
     ]
   },
   "devDependencies": {
+    "@babel/preset-react": "^7.23.3",
     "@reduxjs/toolkit": "^1.9.7",
     "concurrently": "^8.2.2",
     "electron": "^27.0.2",

@@ -32,6 +32,10 @@ const MOD_SHOW_TIMER_BOX = 'musicController/MOD_SHOW_TIMER_BOX';
 const SET_IS_CURRENT_PLAYLIST_VIEWED = 'musicController/SET_IS_CURRENT_PLAYLIST_VIEWED';
 
 const SET_MUSIC_PLAYER_REF = 'musicController/SET_MUSIC_PLAYER_REF';
+
+const SET_REST_TIME = 'musicController/SET_REST_TIME';
+const SET_IS_START_REDUCE_TIME = 'musicController/SET_IS_START_REDUCE_TIME';
+const REDUCE_REST_TIME = 'musicController/REDUCE_REST_TIME';
 ////////////////////////////////////동기화 + 비동기화 액션/////////////////////////////////////////////////////////
 export const loadAll = () => async dispatch => {
   try {
@@ -190,6 +194,18 @@ export const setMusicPlayerRef = (input) => ({
   type: SET_MUSIC_PLAYER_REF,
   input
 })
+
+export const setRestTime = (time) => ({
+  type: SET_REST_TIME,
+  time
+})
+export const setIsStartReduceTime = (flag) => ({
+  type : SET_IS_START_REDUCE_TIME,
+  flag
+})
+export const reduceRestTime = () => ({
+  type: REDUCE_REST_TIME,
+})
 ///////////////////////////////////////////////초기 상태//////////////////////////////////////////////
 
 // //repeatStatue와 shuffleStatus
@@ -217,7 +233,9 @@ const initialState = {
   repeatStatus : 0,
   isCurrentPlaylistViewed : true,
   musicPlayerRef : null,
-  showTimerBox : true,
+  isShowTimerBox : false,
+  isStartReduceTime : false,
+  restTime: -1,
 }
 
 ///////////////////////////////////////////리듀서//////////////////////////////////////////////////
@@ -451,7 +469,7 @@ function musicController(state = initialState, action){
     case MOD_SHOW_TIMER_BOX:
       return {
         ...state,
-        showTimerBox: action.input
+        isShowTimerBox: action.input
       }
 
 
@@ -466,6 +484,22 @@ function musicController(state = initialState, action){
         ...state,
         musicPlayerRef : action.input
       };
+
+    case SET_REST_TIME:
+      return{
+        ...state,
+        restTime: action.time //초단위
+      };
+    case SET_IS_START_REDUCE_TIME:
+      return{
+        ...state,
+        isStartReduceTime: action.flag
+      }
+    case REDUCE_REST_TIME:
+      return{
+        ...state,
+        restTime: state.restTime - 1
+      }
     default :
       return state;
   }
