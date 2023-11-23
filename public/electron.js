@@ -13,13 +13,17 @@ function createWindow() {
     minHeight: 600,
     webPreferences: {
       preload: path.join(__dirname, "preload.js"),
-
     },
+    icon: path.join(__dirname, 'public/logo.png')
   });
-  mainWindow.loadURL('http://localhost:3000');
-  // app.on('open-file', (event, filePath) => {
-  //   mainWindow.webContents.send('openFile', filePath);
-  // });
+
+  mainWindow.setMenu(null);
+
+  if (isDev) {
+    mainWindow.loadURL("http://localhost:3000");
+  } else {
+    mainWindow.loadFile(path.join(__dirname, './index.html'));
+  }
 }
 
 app.whenReady().then(() => {
@@ -32,6 +36,12 @@ app.whenReady().then(() => {
       console.log(error);
     }
   });
+  const resourceDir = path.join(__dirname, './resource');
+  const exists = fs.existsSync(resourceDir);
+  if (!exists) {
+    fs.promises.mkdir(resourceDir, { recursive: true });
+  }
+
   createWindow();
   //   // 앱이 준비되었을 때 open-file 이벤트 처리
   // app.on('open-file', (event, filePath) => {
@@ -66,7 +76,7 @@ ipcMain.handle('select-music-file', async (event) => {
 ipcMain.handle('load-all', async (event) => {
   try {
     // ./resource 폴더에서 모든 JSON 파일 로드
-    const files = fs.readdirSync('./resource').filter(file => file.endsWith('.json'));
+    const files = fs.readdirSync(path.join(__dirname, './resource')).filter(file => file.endsWith('.json'));
     const playlists = files.map(file => {
       const filePath = path.join(__dirname, 'resource', file);
       const data = fs.readFileSync(filePath, 'utf-8');
@@ -81,7 +91,7 @@ ipcMain.handle('load-all', async (event) => {
 ipcMain.handle('add-playlist', async (event, playlist) => {
   try {
     if(playlist.name !== "현재재생목록"){//현재재생목록 플레이리스트면 굳이 json파일을 만들지 않아도 된다
-      await fs.promises.writeFile(`./resource/${playlist.name}.json`, JSON.stringify(playlist));
+      await fs.promises.writeFile(path.join(__dirname, `./resource/${playlist.name}.json`), JSON.stringify(playlist));
     }
     event.sender.send('savePlaylistResponse', true);
   } catch (error) {
