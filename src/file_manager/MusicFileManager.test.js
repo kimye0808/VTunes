@@ -14,20 +14,25 @@ test("load music", () => {
       expect(music.duration).toBe(305);
       expect(music.album).toBe('Colorful Express');
       expect(music.path).toBe(path);
-      expect(doesFileExist(`${thumbnailPath}/${music.name}.jpg`)).toBe(true);
+      expect(fs.existsSync(`${thumbnailPath}/${music.name}.jpg`)).toBe(true);
     });
 })
 
-function doesFileExist(filePath) {
-  try {
-    // 파일의 상태를 확인
-    fs.accessSync(filePath, fs.constants.F_OK);
-    return true; // 파일이 존재함
-  } catch (error) {
-    if (error.code === 'ENOENT') {
-      return false; // 파일이 존재하지 않음
-    } else {
-      throw error; // 다른 오류가 발생하면 예외를 던짐
-    }
-  }
-}
+test("타이틀 정보가 없으면 파일 이름이 name으로 설정된다", () => {
+  const musicFileManager = new MusicFileManager();
+  const path = "C:/Users/LEE/Downloads/Quick Share/1_no-title.mp3";
+  const thumbnailPath = "./resource"
+  return musicFileManager.loadMusicFile(path, thumbnailPath)
+    .then((music) => {
+      console.log(music);
+      expect(music.name).toBe('1_no-title');
+    });
+})
+test("load lyrics", () => {
+  const musicFileManager = new MusicFileManager();
+  const path = "C:/Users/LEE/Downloads/Quick Share/1.lrc"
+  const lyrics = musicFileManager.loadLyricsFile(path);
+
+  console.log(lyrics);
+  expect(Object.keys(lyrics).length).toBe(71);
+})
