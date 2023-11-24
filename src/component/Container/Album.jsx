@@ -44,7 +44,12 @@ const Album = ({currentMusic}) => {
   }, [currentMusic]);
 
   const toggleIsAlbumClick = () => {
-    if (lyricsFile || (currentMusic && currentMusic.lyrics !== null && currentMusic.lyrics !== undefined)) {
+    const hasLyricsInMusic = () => {
+      return currentMusic && currentMusic.lyrics !== null && currentMusic.lyrics !== undefined
+        && currentMusic.lyrics !== '' && currentMusic.lyrics.length !== 0;
+    }
+
+    if (lyricsFile || hasLyricsInMusic()) {
       setIsAlbumClick(prev => (!prev));
     }
   }
