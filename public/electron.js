@@ -14,7 +14,7 @@ function createWindow() {
     webPreferences: {
       preload: path.join(__dirname, "preload.js"),
     },
-    icon: path.join(__dirname, 'public/logo.png')
+    icon: path.join(__dirname, '/logo.png')
   });
 
   mainWindow.setMenu(null);
