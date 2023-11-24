@@ -446,10 +446,8 @@ function musicController(state = initialState, action){
     case NEXT_MUSIC:
       currentPlaylist = state.currentPlaylist;
       currentMusic = state.currentMusic;
-    
       if (currentPlaylist && currentPlaylist.list.length > 0) {
-        let currentIndex = currentPlaylist.list.findIndex(music => music === currentMusic);
-    
+        let currentIndex = currentPlaylist.list.findIndex(music => music.name === currentMusic.name && music.artist === currentMusic.artist);
         if (currentIndex !== -1) {
           let newIndex = (currentIndex + 1 + currentPlaylist.list.length) % currentPlaylist.list.length;
           const newMusic = currentPlaylist.list[newIndex];//플레이리스트 내의 다음 음악(맨끝이면 맨처음으로)
