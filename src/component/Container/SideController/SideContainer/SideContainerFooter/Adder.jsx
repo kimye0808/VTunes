@@ -88,6 +88,9 @@ const Adder = ({
               onClick={() => {
                 setImgAdderClick(true);
                 handleFileInputChange();
+                setTimeout(()=>{
+                  setImgAdderClick(prev=>!prev);
+                }, 250);
               }}
               onMouseEnter={() => setImgAdderHover(true)}
               onMouseLeave={() => setImgAdderHover(false)}
