@@ -3,7 +3,7 @@ import {useSelector, useDispatch} from 'react-redux';
 import SearchEngine from '../component/Container/SideController/SearchEngine';
 import { setIsCurrentPlaylistViewed } from '../modules/musicController';
 
-const SearchEngineContainer = ({ isPlMenuClick, onPlMenuClick, userInput, onUserInput}) => {
+const SearchEngineContainer = ({ isPlMenuClick, onPlMenuClick, userInput, onUserInput, inputRef}) => {
   const selectedPlaylist = useSelector(state=> state.musicController.selectedPlaylist);
   const isCurrentPlaylistViewed = useSelector(state=> state.musicController.isCurrentPlaylistViewed);
   const dispatch = useDispatch();
@@ -17,6 +17,7 @@ const SearchEngineContainer = ({ isPlMenuClick, onPlMenuClick, userInput, onUser
     onUserInput={onUserInput}
     isCurrentPlaylistViewed={isCurrentPlaylistViewed}
     onIsCurrentPlaylistViewed = {(input)=>dispatch(setIsCurrentPlaylistViewed(input))}
+    inputRef={inputRef}
     />
   );
 };

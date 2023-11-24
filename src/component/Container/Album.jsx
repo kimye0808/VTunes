@@ -16,7 +16,8 @@ const Album = ({currentMusic}) => {
         setImgFile(tmpImg);
       } catch (error) {
         console.error("Error loading image:", error);
-      }
+      }else{
+        setImgFile(null);
     }
   };
 

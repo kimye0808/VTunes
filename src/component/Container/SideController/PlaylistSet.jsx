@@ -12,6 +12,7 @@ const PlaylistSet = ({
   onAddPlaylist, 
   onDeletePlaylist,
   onIsCurrentPlaylistViewed,
+  inputRef,
 }) => {
   const [isDeleteClick, setIsDeleteClick] = useState(false);
   const [isAddClick, setIsAddClick] = useState(false);
@@ -19,7 +20,7 @@ const PlaylistSet = ({
   const [isAlert, setIsAlert] = useState(false);
   
   useEffect(()=>{
-    onLoadAllPlaylists();
+    onLoadAllPlaylists();//listOfPlaylist를 로드한다
   // eslint-disable-next-line react-hooks/exhaustive-deps
   },[isPlMenuClick])
   
@@ -67,9 +68,9 @@ const PlaylistSet = ({
     <div className={styles["playlist-set-wrapper"]}>
       {isAddClick&&(//new playlist클릭시 뜨는 창 : adder-modal
         <div className={styles["adder-modal"]}>
-          <span>{isAlert ? "Unvalid Playlist Name" : "New Playlist"}</span>
+          <span>{isAlert ? "Invalid Playlist Name" : "New Playlist"}</span>
           <div className={styles["search-engine"]}>
-            <input
+            <input ref = {inputRef}
               type="text"
               placeholder="       Enter the name for the New Playlist :)"
               value={userInput}

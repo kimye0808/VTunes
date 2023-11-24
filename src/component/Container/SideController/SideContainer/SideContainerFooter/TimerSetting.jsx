@@ -38,8 +38,11 @@ const TimerSetting = ({
         }
         if (restTime === 0 && musicPlayerRef.current) {
             musicPlayerRef.current.audio.current.pause();
+            onIsStartReduceTime(false);
+            onReduceRestTime(0);
           }
         return () => clearInterval(intervalId);
+      // eslint-disable-next-line react-hooks/exhaustive-deps
       }, [isStartReduceTime, restTime, onReduceRestTime]);
     return (
         <div className={styles["timer-setting"]}>

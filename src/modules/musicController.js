@@ -366,6 +366,7 @@ function musicController(state = initialState, action){
     case DELETE_MUSIC_SUCCESS:
       playlist = action.payload.playlist;
       music = action.payload.music;
+      const isDeleteCurrentMusic = music.name === state.currentMusic.name && music.artist === state.currentMusic.artist;
       const updatedListOfPlaylistDelete = state.listOfPlaylist.map(pl => {
         if (pl === playlist) {
           return {
@@ -377,16 +378,38 @@ function musicController(state = initialState, action){
         }
       });
       if (playlist.name === '현재재생목록') {
-        return {
-          ...state,
-          listOfPlaylist: updatedListOfPlaylistDelete,
-          currentPlaylist: {
-            ...state.currentPlaylist,
-            list: state.currentPlaylist.list.filter(ms => ms.name !== music.name),
-          },
-        };
+        if(!isDeleteCurrentMusic){
+          return {
+            ...state,
+            listOfPlaylist: updatedListOfPlaylistDelete,
+            currentPlaylist: {
+              ...state.currentPlaylist,
+              list: state.currentPlaylist.list.filter(ms => ms.name !== music.name),
+            },
+          };
+        }else{
+          // Find the next music in the playlist to set as the current music
+          const remainingMusic = state.currentPlaylist.list.find(ms => ms.name !== music.name);
+          return{
+            ...state,
+            listOfPlaylist: updatedListOfPlaylistDelete,
+            currentPlaylist: {
+              ...state.currentPlaylist,
+              list: state.currentPlaylist.list.filter(ms=> ms.name !== music.name),
+            },
+            currentMusic: remainingMusic || {
+              name: '',
+              lyrics: '',
+              artist: '',
+              album: '',
+              duration: 0,
+              path: '',
+              imgPath: '',
+            },
+          }
+        }
       } else {
-      return {
+        return {
           ...state,
           listOfPlaylist: updatedListOfPlaylistDelete,
           selectedPlaylist: {
