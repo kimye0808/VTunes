@@ -69,7 +69,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  
+
+  white-space: nowrap;       /* 텍스트를 한 줄에 표시 */
+  overflow: hidden;          /* 넘치는 부분을 숨김 */
+  text-overflow: ellipsis;   /* 넘치는 부분에 ... 표시 */
   .name{
     color: #000;
     font-weight: 600;

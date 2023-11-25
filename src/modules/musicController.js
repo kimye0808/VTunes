@@ -366,12 +366,12 @@ function musicController(state = initialState, action){
     case DELETE_MUSIC_SUCCESS:
       playlist = action.payload.playlist;
       music = action.payload.music;
-      const isDeleteCurrentMusic = music.name === state.currentMusic.name && music.artist === state.currentMusic.artist;
+      const isDeleteCurrentMusic =  music.path === state.currentMusic.path;
       const updatedListOfPlaylistDelete = state.listOfPlaylist.map(pl => {
         if (pl === playlist) {
           return {
             ...pl,
-            list: pl.list.filter(ms => ms.name !== music.name),
+            list: pl.list.filter(ms => ms.path !== music.path),
           };
         } else {
           return pl;
@@ -384,7 +384,7 @@ function musicController(state = initialState, action){
             listOfPlaylist: updatedListOfPlaylistDelete,
             currentPlaylist: {
               ...state.currentPlaylist,
-              list: state.currentPlaylist.list.filter(ms => ms.name !== music.name),
+              list: state.currentPlaylist.list.filter(ms => ms.path !== music.path),
             },
           };
         }else{
