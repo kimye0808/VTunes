@@ -47,7 +47,7 @@ const TimerSetting = ({
     return (
         <div className={styles["timer-setting"]}>
             <div className={styles["button-area"]}>
-                <div className={styles["timer"]}>
+                <div className={styles["timer"]} cypress-testid="timer_button">
                     <img
                         src={timerImage}
                         alt="timerImage"
@@ -65,7 +65,7 @@ const TimerSetting = ({
             </div>
             <div className={styles["reset-time"]}>
                 <div className={styles["button-area"]}>
-                    <div className={styles["reset"]}>
+                    <div className={styles["reset"]} cypress-testid="time_left">
                         {imgResetHover&&restTime !== -1 &&restTime !== 0? <img
                             src={binImage}
                             alt="reset"
