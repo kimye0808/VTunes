@@ -20,7 +20,7 @@ const PlaylistSet = ({
   const [isAlert, setIsAlert] = useState(false);
   
   useEffect(()=>{
-    onLoadAllPlaylists();//listOfPlaylist를 로드한다
+    //onLoadAllPlaylists();//listOfPlaylist를 로드한다 -----------test엔 하지 않는다
   // eslint-disable-next-line react-hooks/exhaustive-deps
   },[isPlMenuClick])
   
@@ -63,6 +63,54 @@ const PlaylistSet = ({
     width: "35%",
   };
 
+  const listOfTestPlaylist = [
+      {
+        name : "test00-playlist",
+        list : [
+          {
+            name : "music00",
+            lyrics : "test-lyrics",
+            artist :  "test-artist",
+            album : "test-album",
+            duration : 10,
+            path : "",
+            imgPath: "",
+          },
+          {
+            name : "music01",
+            lyrics : "test-lyrics",
+            artist :  "test-artist",
+            album : "test-album",
+            duration : 11,
+            path : "",
+            imgPath: "",
+          },
+        ],
+      },
+      {
+        name : "test01-playlist",
+        list : [
+          {
+            name : "music02",
+            lyrics : "test-lyrics",
+            artist :  "test-artist",
+            album : "test-album",
+            duration : 12,
+            path : "",
+            imgPath: "",
+          },
+          {
+            name : "music03",
+            lyrics : "test-lyrics",
+            artist :  "test-artist",
+            album : "test-album",
+            duration : 13,
+            path : "",
+            imgPath: "",
+          },
+        ],
+      },
+  ]
   return (
 
     <div className={styles["playlist-set-wrapper"]}>
@@ -91,9 +139,9 @@ const PlaylistSet = ({
       </div>
       <div className={styles["playlist-set"]}>
         <ScrollList>
-        {listOfPlaylist &&
-          Array.isArray(listOfPlaylist) &&
-          listOfPlaylist
+        {listOfTestPlaylist &&
+          Array.isArray(listOfTestPlaylist) &&
+          listOfTestPlaylist
             .filter(playlist => playlist.name !== "현재재생목록")
             .map((playlist, index) => (
               <div className={styles["playlist-wrapper"]} key={index}>

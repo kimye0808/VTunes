@@ -38,9 +38,9 @@ const Album = ({currentMusic}) => {
 
   useEffect(() => {
     //음악이 이미지파일이 있고 음악의 이미지 파일의 경로에 대한 정보가 있으면 불러온다
-    fetchMusicFile();
-    fetchLyricsFile();
-    setIsAlbumClick(false);
+    // fetchMusicFile();
+    // fetchLyricsFile();
+    // setIsAlbumClick(false);
   }, [currentMusic]);
 
   const toggleIsAlbumClick = () => {
@@ -53,6 +53,16 @@ const Album = ({currentMusic}) => {
       setIsAlbumClick(prev => (!prev));
     }
   }
+
+  const testMusic = {
+    name : "music-for-album",
+    lyrics : "test-lyrics",
+    artist :  "test-artist",
+    album : "test-album",
+    duration : 10,
+    path : "",
+    imgPath: "",
+  };
 
   return (
     <div
@@ -68,13 +78,7 @@ const Album = ({currentMusic}) => {
         isAlbumClick ? (
           <div className={styles.lyrics} onClick={toggleIsAlbumClick} data-testid='lyrics-div'>
             <ScrollList>
-              {lyricsFile !== null ? (
-                Object.entries(lyricsFile)
-                  .map(([time, lyrics]) => <LyricsLine time={time}>{lyrics}</LyricsLine>)
-              ) : (
-                currentMusic.lyrics
-                  .map(lyrics => <LyricsLine>{lyrics}</LyricsLine>)
-              )}
+              {testMusic.lyrics}
             </ScrollList>
           </div>
         ) : (
@@ -94,3 +98,5 @@ const Album = ({currentMusic}) => {
 };
 
 export default Album;
+
+
