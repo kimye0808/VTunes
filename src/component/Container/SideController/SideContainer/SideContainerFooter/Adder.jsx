@@ -85,6 +85,7 @@ const Adder = ({
             <img
               src={imgAdderClick ? adderClick : imgAdderHover ? adderHover : adder}
               alt="adder"
+              cypress-testid="adder_button"
               onClick={() => {
                 setImgAdderClick(true);
                 handleFileInputChange();
@@ -100,6 +101,7 @@ const Adder = ({
           <img
             src={imgRemoverClick ? removerClick : imgRemoverHover ? removerHover : remover}
             alt="remover"
+            cypress-testid="remover_button"
             onClick={() => {//실제 음악 별 삭제 기능은 SideContianerContents에서 구현한다
               setImgRemoverClick((prev) => !prev);
               onIsDeleteClick();

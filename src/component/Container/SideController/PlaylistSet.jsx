@@ -69,7 +69,7 @@ const PlaylistSet = ({
       {isAddClick&&(//new playlist클릭시 뜨는 창 : adder-modal
         <div className={styles["adder-modal"]}>
           <span>{isAlert ? "Invalid Playlist Name" : "New Playlist"}</span>
-          <div className={styles["search-engine"]}>
+          <div className={styles["search-engine"]} cypress-testid="playlist_name_input">
             <input ref = {inputRef}
               type="text"
               placeholder="       Enter the name for the New Playlist :)"
@@ -79,15 +79,15 @@ const PlaylistSet = ({
             />
           </div>
           <div className={styles["adder-modal-button-area"]}>
-            <button className={styles["confirm-button"]} onClick={handleAddPlaylist}>Confirm</button>
-            <button className={styles["cancel-button"]} onClick={() => { setIsAddClick(false); setIsAlert(false); }}>Cancel</button>
+            <button className={styles["confirm-button"]} onClick={handleAddPlaylist} cypress-testid="confirm_button">Confirm</button>
+            <button className={styles["cancel-button"]} onClick={() => { setIsAddClick(false); setIsAlert(false); }} cypress-testid="cancel_button">Cancel</button>
           </div>
         </div>
       )}
       <div className={styles["header"]} />{/*본문*/}
       <div className={styles["playlist-adder"]}>
-        <button style={buttonStyle} onClick={handleAddClick}>New Playlist</button>
-        <button style={buttonStyle} onClick={handleDeleteClick}>Delete Playlist</button>
+        <button style={buttonStyle} onClick={handleAddClick} cypress-testid="new_playlist_button">New Playlist</button>
+        <button style={buttonStyle} onClick={handleDeleteClick} cypress-testid="delete_playlist_button">Delete Playlist</button>
       </div>
       <div className={styles["playlist-set"]}>
         <ScrollList>

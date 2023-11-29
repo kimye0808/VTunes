@@ -1,4 +1,4 @@
-const { app, BrowserWindow, ipcMain, protocol ,dialog} = require('electron');
+const { app, BrowserWindow, ipcMain, protocol ,dialog, session} = require('electron');
 const isDev = require('electron-is-dev');
 const fs = require('fs');
 const path = require("path")
@@ -38,11 +38,25 @@ app.whenReady().then(() => {
       console.log(error);
     }
   });
+
   const resourceDir = path.join(__dirname, './resource');
   const exists = fs.existsSync(resourceDir);
   if (!exists) {
     fs.promises.mkdir(resourceDir, { recursive: true });
   }
+  const extensionPath = 'C:\\Users\\Blue Fort\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\Extensions\\fmkadmapgofadopljbjfkapdkoienihi\\4.28.5_0';
+  app.whenReady().then(() => {
+    const ses = session.defaultSession;
+    ses.loadExtension(extensionPath)
+        .then((extension) => {
+          console.log(`Extension loaded: ${extension.name}`);
+          createWindow();
+        })
+        .catch((err) => {
+          console.error('Failed to load extension:', err);
+          createWindow();
+        });
+  });
 
   createWindow();
   //   // 앱이 준비되었을 때 open-file 이벤트 처리

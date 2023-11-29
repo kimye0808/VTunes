@@ -23,6 +23,7 @@ const PlaylistItem = ({ buttonFlag, playlistData, onPlMenuClick, onSelectedPlayl
           <img
             src={deleterImage}
             alt="deleter"
+            cypress-testid="delete_playlist_button"
             onClick={() => {
               setImgDeleterClick(true);
               setTimeout(() => setImgDeleterClick(false), 200);
@@ -41,6 +42,7 @@ const PlaylistItem = ({ buttonFlag, playlistData, onPlMenuClick, onSelectedPlayl
         <img
             src={plEnterImage}
             alt="playlistEnter"
+            cypress-testid = "playlist_enter"
             onClick={() => {
               setImgPlEnterClick(true);
               setTimeout(() => setImgPlEnterClick(false), 100);

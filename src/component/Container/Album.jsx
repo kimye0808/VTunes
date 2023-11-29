@@ -66,7 +66,7 @@ const Album = ({currentMusic}) => {
     >
       {
         isAlbumClick ? (
-          <div className={styles.lyrics} onClick={toggleIsAlbumClick} data-testid='lyrics-div'>
+          <div className={styles.lyrics} onClick={toggleIsAlbumClick} data-testid='lyrics-div' cypress-testid ="show_album_button">
             <ScrollList>
               {lyricsFile !== null ? (
                 Object.entries(lyricsFile)
@@ -78,7 +78,7 @@ const Album = ({currentMusic}) => {
             </ScrollList>
           </div>
         ) : (
-          <div className={styles["mini-album"]} onClick={toggleIsAlbumClick} data-testid='album-div'>
+          <div className={styles["mini-album"]} onClick={toggleIsAlbumClick} data-testid='album-div' cypress-testid ="show_lyrics_button">
             {
               imgFile === null || imgFile === undefined ? (
                 <img src={DefaultAlbum} alt="앨범 이미지"/>

@@ -48,6 +48,7 @@ const MusicItem = ({buttonFlag, musicData, isPlaying, playlistToRender, onDelete
           <img
             src={deleterImage}
             alt="deleter"
+            cypress-testid="delete_music_button"
             onClick={() => {
               setImgDeleterClick(true);
               setTimeout(() => setImgDeleterClick(false), 100);

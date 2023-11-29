@@ -43,7 +43,7 @@ const SearchEngine = ({
   return (
     <div className={styles["search-engine-wrapper"]}>
       <div className={styles["search-engine-area"]}>
-          <div className={styles["search-engine"]}>
+          <div className={styles["search-engine"]} cypress-testid="search_bar">
           <input
             ref={inputRef}
             type="text"
@@ -67,7 +67,7 @@ const SearchEngine = ({
           )}
         </div>
       </div>
-      <div className={styles["playlist-menu"]} onClick={onPlMenuClick}>
+      <div className={styles["playlist-menu"]} cypress-testid="playlist_menu" onClick={onPlMenuClick}>
         <img
           src={plMenuImage}
           alt="playlistMenu"
