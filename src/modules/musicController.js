@@ -14,6 +14,9 @@ const SET_CURRENT_PLAYLIST_FAILURE = 'musicController/SET_CURRENT_PLAYLIST_FAILU
 const SET_SELECTED_PLAYLIST_SUCCESS = 'musicController/SET_SELECTED_PLAYLIST_SUCCESS';
 const SET_SELECTED_PLAYLIST_FAILURE = 'musicController/SET_SELECTED_PLAYLIST_FAILURE';
 
+const CHANGE_PLAYLIST_NAME_SUCCESS = 'musicController/CHANGE_PLAYLIST_NAME_SUCCESS';
+const CHANGE_PLAYLIST_NAME_FAILURE = 'musicController/CHANGE_PLAYLIST_NAME_FAILURE';
+
 const ADD_MUSIC_SUCCESS = 'musicController/ADD_MUSIC_SUCCESS';
 const ADD_MUSIC_FAILURE = 'musicController/ADD_MUSIC_FAILURE';
 
@@ -100,6 +103,15 @@ export const changeCurrentPlaylist = (playlist) => async dispatch =>{
   }catch(error){
     dispatch(changeCurrentPlaylistFailure());
     console.error('Error changing selected playlist:', error);
+  }
+}
+export const changePlaylistName = (playlist, newName) => async dispatch =>{
+  try{
+    await window.electronApi.changePlaylistName(playlist, newName);
+    dispatch(changePlaylistNameSuccess(playlist, newName));
+  }catch(error){
+    dispatch(changePlaylistNameFailure());
+    console.error('Error changing playlist name', error);
   }
 }
 //////////////////////////////////////////비동기화 액션///////////////////////////////////////////////////
@@ -205,6 +217,13 @@ export const setIsStartReduceTime = (flag) => ({
 })
 export const reduceRestTime = () => ({
   type: REDUCE_REST_TIME,
+})
+export const changePlaylistNameSuccess = (playlist, newName)=>({
+  type: CHANGE_PLAYLIST_NAME_SUCCESS,
+  playlist, newName,
+})
+export const changePlaylistNameFailure = ()=>({
+  type: CHANGE_PLAYLIST_NAME_FAILURE,
 })
 ///////////////////////////////////////////////초기 상태//////////////////////////////////////////////
 
@@ -421,15 +440,66 @@ function musicController(state = initialState, action){
     case DELETE_MUSIC_FAILURE:
       alert('Failed to delete music.');
       return state;
+    
+  case CHANGE_PLAYLIST_NAME_SUCCESS:
+    const tmpPlaylist = action.playlist;
+    const newName = action.newName;
+    
+    const updatedListOfPlaylist = state.listOfPlaylist.map(pl => {
+      if (pl.name === tmpPlaylist.name) {
+        // 변경된 플레이리스트의 이름을 업데이트
+        const updatedPl = {
+          ...pl,
+          name: newName,
+        };
+        // 음악 객체의 imgPath 업데이트
+        const updatedMusicList = updatedPl.list.map(music => {
+          const imgPath = music.imgPath.replace(tmpPlaylist.name, newName);
+          return {
+            ...music,
+            imgPath: imgPath,
+          };
+        });
 
+        return {
+          ...updatedPl,
+          list: updatedMusicList,
+        };
+      } else {
+        return pl;
+      }
+    });
+    // 만약 선택된 플레이리스트가 변경된 플레이리스트와 같다면 업데이트
+    const updatedSelectedPlaylist = state.selectedPlaylist.name === tmpPlaylist.name
+      ? {
+          ...state.selectedPlaylist,
+          name: newName,
+          list: state.selectedPlaylist.list.map(music => {
+            const imgPath = music.imgPath.replace(tmpPlaylist.name, newName);
+            return {
+              ...music,
+              imgPath: imgPath,
+            };
+          }),
+        }
+      : state.selectedPlaylist;
 
+    return {
+      ...state,
+      listOfPlaylist: updatedListOfPlaylist,
+      selectedPlaylist: updatedSelectedPlaylist,
+    };
+
+    case CHANGE_PLAYLIST_NAME_FAILURE:
+      alert('Failed to change playlist name.');
+      return state;
 
     case PREVIOUS_MUSIC:
       currentPlaylist = state.currentPlaylist;
       currentMusic = state.currentMusic;
     
       if (currentPlaylist && currentPlaylist.list.length > 0) {
-        let currentIndex = currentPlaylist.list.findIndex(music => music === currentMusic);
+        let currentIndex = currentPlaylist.list.findIndex(music => music.path === currentMusic.path && music.name === currentMusic.name && music.artist === currentMusic.artist);
     
         if (currentIndex !== -1) {
           let newIndex = (currentIndex - 1 + currentPlaylist.list.length) % currentPlaylist.list.length;
@@ -447,7 +517,8 @@ function musicController(state = initialState, action){
       currentPlaylist = state.currentPlaylist;
       currentMusic = state.currentMusic;
       if (currentPlaylist && currentPlaylist.list.length > 0) {
-        let currentIndex = currentPlaylist.list.findIndex(music => music.name === currentMusic.name && music.artist === currentMusic.artist);
+        let currentIndex = currentPlaylist.list.findIndex(music =>music.path === currentMusic.path && music.name === currentMusic.name && music.artist === currentMusic.artist);
+    
         if (currentIndex !== -1) {
           let newIndex = (currentIndex + 1 + currentPlaylist.list.length) % currentPlaylist.list.length;
           const newMusic = currentPlaylist.list[newIndex];//플레이리스트 내의 다음 음악(맨끝이면 맨처음으로)
