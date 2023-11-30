@@ -78,7 +78,7 @@ const SideContainerContents = ({
         if (music) {
 
           // Check if the music already exists in the playlist
-          const isDuplicate = currentWorkingPlaylist.list.some(existingMusic => existingMusic.path === music.path || existingMusic.name === music.name || existingMusic.artist === music.artist);
+          const isDuplicate = currentWorkingPlaylist.list.some(existingMusic => existingMusic.path === music.path || (existingMusic.name === music.name && existingMusic.artist === music.artist));
 
           if (isDuplicate) {
             alert("이미 추가된 음악입니다.");
