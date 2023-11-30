@@ -20,9 +20,12 @@ function createWindow() {
   mainWindow.setMenu(null);
 
   if (isDev) {
-    mainWindow.loadURL("http://localhost:3000");
+    mainWindow.loadFile('build/index.html');
+    //mainWindow.loadURL("http://localhost:3000");
+    mainWindow.webContents.openDevTools();
   } else {
     mainWindow.loadFile(path.join(__dirname, './index.html'));
+    mainWindow.webContents.openDevTools();
   }
 }
 
@@ -278,8 +281,9 @@ ipcMain.handle('change-selected-playlist', async (event, playlist) => {
       const filePath = path.join(__dirname, `./resource/${playlist.name}.json`);
       const fileData = await fs.promises.readFile(filePath, 'utf-8');
       const playlistData = JSON.parse(fileData);
-
+      
       playlistData.list = playlist.list;
+      console.log(playlistData);
 
       await fs.promises.writeFile(filePath, JSON.stringify(playlistData));
     }
@@ -336,6 +340,50 @@ ipcMain.handle('change-current-playlist', async (event, playlist) => {
     event.sender.send('changePlaylistResponse', false);
   }
 });
+
+ipcMain.handle('change-playlist-name', async (event, playlist, newName) => {
+  try {
+    // 기존 JSON 파일 경로 설정
+    const sourceFilePath = path.join(__dirname, `./resource/${playlist.name}.json`);
+
+    // 기존 JSON 파일 읽기
+    const sourceFileData = await fs.promises.readFile(sourceFilePath, 'utf-8');
+    const playlistData = JSON.parse(sourceFileData);
+
+    // 새로운 JSON 파일 경로 설정
+    const destinationFilePath = path.join(__dirname, `./resource/${newName}.json`);
+
+    // 플레이리스트 데이터 복사 및 이름 변경
+    const updatedMusicList = playlistData.list.map(music => {
+      // imgPath에서 playlist.name을 newName으로 바꾸기
+      const updatedImgPath = music.imgPath.replace(playlist.name, newName);
+      return {
+        ...music,
+        imgPath: updatedImgPath,
+      };
+    });
+
+    const updatedPlaylistData = { name: newName, list: updatedMusicList };
+
+    // 기존 JSON 파일 삭제
+    await fs.promises.unlink(sourceFilePath);
+    // 새로운 JSON 파일에 데이터 쓰기
+    await fs.promises.writeFile(destinationFilePath, JSON.stringify(updatedPlaylistData));
+
+    // resource 폴더 내의 플레이리스트 폴더 경로 설정
+    const sourceFolderPath = path.join(__dirname, `./resource/${playlist.name}`);
+    const destinationFolderPath = path.join(__dirname, `./resource/${newName}`);
+
+    // 폴더명 변경 (파일 유지)
+    await fs.promises.rename(sourceFolderPath, destinationFolderPath);
+
+    event.sender.send('changePlaylistResponse', true);
+  } catch (error) {
+    console.error('Error changing playlist name:', error);
+    event.sender.send('changePlaylistResponse', false);
+  }
+});
+
 
 
 app.on('window-all-closed', function () {

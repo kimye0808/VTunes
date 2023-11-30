@@ -13,6 +13,7 @@ contextBridge.exposeInMainWorld("electronApi", {
   changeCurrentPlaylist: (playlist) => ipcRenderer.invoke("change-current-playlist", playlist),
   loadImgFile: (imgPath) => ipcRenderer.invoke("load-img-file", imgPath),
   loadLyricsFile: (lyricsPath) => ipcRenderer.invoke("load-lyrics-file", lyricsPath),
+  changePlaylistName: (playlist, newName) => ipcRenderer.invoke("change-playlist-name", playlist, newName),
 });
 
 ipcRenderer.on('savePlaylistResponse', (event, success) => {

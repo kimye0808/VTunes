@@ -7,9 +7,29 @@
   align-items: center;
 
   background-color: #F0E8E8;
-  outline: 2px Dsolid black;/*임시*/
 }
 
+.side-container-header input{
+  position: relative;
+  left: 5%;
+  width: 95%;
+  height: 100%;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  background-color: transparent;
+
+  font-size: 30px;
+  font-weight: 600;
+  outline: transparent;
+  border: transparent;
+}
+.side-container-header input::placeholder{
+  color: black;
+  font-weight: 600;
+}
 .side-container-header span{
   position: absolute;
   left: 30px;
