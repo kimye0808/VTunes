@@ -20,8 +20,9 @@ const SideContainerHeader = ({selectedPlaylist, currentPlaylist, isCurrentPlayli
 
   const handleChangeName = (event)=>{
     if (event.key === "Enter" && userInput !== "") {
-      console.log("playlistname 변경")
-      onPlaylistName(selectedPlaylist, userInput);
+      if(userInput !== "현재재생목록"){
+        onPlaylistName(selectedPlaylist, userInput);
+      }
       setUserInput("");
       inputRef.current.blur(); // Enter 키를 눌렀을 때 포커스 해제
     }
