@@ -1,5 +1,5 @@
 import {fireEvent, render, screen} from '@testing-library/react';
-import Album from "./Album";
+import Album from "../component/Container/Album";
 import {useSelector} from "react-redux";
 
 const mockCurrentMusic = {

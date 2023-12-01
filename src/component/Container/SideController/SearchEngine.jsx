@@ -45,6 +45,7 @@ const SearchEngine = ({
       <div className={styles["search-engine-area"]}>
           <div className={styles["search-engine"]}>
           <input
+            data-testid = "search-engine-input"
             ref={inputRef}
             type="text"
             placeholder="            Search Music in Playlist"

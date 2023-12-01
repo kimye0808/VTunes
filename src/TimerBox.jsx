@@ -12,7 +12,7 @@ const TimerBox = ({isShowTimerBox, onShowTimerBox, onIsStartReduceTime, onRestTi
         onShowTimerBox(false);
     }
     return(
-        <div className={styles["timerBox_container"]}>
+        <div className={styles["timerBox_container"]} data-testid="timerBox-container">
             <div className={styles["timerBox_header"]}>
                 <img
                     src={timerIcon}

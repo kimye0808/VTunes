@@ -65,7 +65,7 @@ const TimerSetting = ({
             </div>
             <div className={styles["reset-time"]}>
                 <div className={styles["button-area"]}>
-                    <div className={styles["reset"]}>
+                    <div className={styles["reset"]} data-testid='reset'>
                         {imgResetHover&&restTime !== -1 &&restTime !== 0? <img
                             src={binImage}
                             alt="reset"

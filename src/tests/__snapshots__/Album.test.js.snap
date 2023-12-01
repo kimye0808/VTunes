@@ -1,0 +1,1096 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Album 앨범 영역을 눌렀을 때 가사가 출력된다 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="album"
+        style="background-size: cover; background-repeat: no-repeat; background-position: center;"
+      >
+        <div
+          class="lyrics"
+          data-testid="lyrics-div"
+        >
+          <div
+            class="scroll-list-container"
+            data-testid="scrollList"
+          >
+            <div
+              class="scroll-list"
+            >
+              <div
+                style="width: 100%; height: 60%; margin-bottom: 15px;"
+              >
+                <span>
+                  바라봤을 뿐인 얼굴
+                </span>
+              </div>
+              <div
+                style="width: 100%; height: 60%; margin-bottom: 15px;"
+              >
+                <span>
+                  떠오르지 않나요? 네
+                </span>
+              </div>
+              <div
+                style="width: 100%; height: 60%; margin-bottom: 15px;"
+              >
+                <span>
+                  꺼림칙한 건 나인데
+                </span>
+              </div>
+              <div
+                style="width: 100%; height: 60%; margin-bottom: 15px;"
+              >
+                <span>
+                  신경 쓰이잖아요?
+                </span>
+              </div>
+              <div
+                style="width: 100%; height: 60%; margin-bottom: 15px;"
+              >
+                <span>
+                  희미해져 가는 게
+                </span>
+              </div>
+              <div
+                style="width: 100%; height: 60%; margin-bottom: 15px;"
+              >
+                <span>
+                  사라져 없어져 버린다는 게
+                </span>
+              </div>
+              <div
+                style="width: 100%; height: 60%; margin-bottom: 15px;"
+              >
+                <span>
+                  망설임은 항상 내 편
+                </span>
+              </div>
+              <div
+                style="width: 100%; height: 60%; margin-bottom: 15px;"
+              >
+                <span>
+                  물어 볼 수 조차 없죠
+                </span>
+              </div>
+              <div
+                style="width: 100%; height: 60%; margin-bottom: 15px;"
+              >
+                <span>
+                  대체 어디로들 가는 건지 몰라
+                </span>
+              </div>
+              <div
+                style="width: 100%; height: 60%; margin-bottom: 15px;"
+              >
+                <span>
+                  인생 마지막의 숨을 든 채로
+                </span>
+              </div>
+              <div
+                style="width: 100%; height: 60%; margin-bottom: 15px;"
+              >
+                <span>
+                  몸을 던져 버리잖아
+                </span>
+              </div>
+              <div
+                style="width: 100%; height: 60%; margin-bottom: 15px;"
+              >
+                <span>
+                  색 바랜 기록 위에 눈물 닿아도
+                </span>
+              </div>
+              <div
+                style="width: 100%; height: 60%; margin-bottom: 15px;"
+              >
+                <span>
+                  빛은 돌아오지 않아
+                </span>
+              </div>
+              <div
+                style="width: 100%; height: 60%; margin-bottom: 15px;"
+              >
+                <span>
+                  구겨진 기억만을 안고 살고 싶다면
+                </span>
+              </div>
+              <div
+                style="width: 100%; height: 60%; margin-bottom: 15px;"
+              >
+                <span>
+                  누구에게 말해야만 해?
+                </span>
+              </div>
+              <div
+                style="width: 100%; height: 60%; margin-bottom: 15px;"
+              >
+                <span>
+                  가장 바라고 가장 두려운 것은
+                </span>
+              </div>
+              <div
+                style="width: 100%; height: 60%; margin-bottom: 15px;"
+              >
+                <span>
+                  마음의 저편에
+                </span>
+              </div>
+              <div
+                style="width: 100%; height: 60%; margin-bottom: 15px;"
+              >
+                <span>
+                  두고 온 나인데 어느새 손에 쥐어져
+                </span>
+              </div>
+              <div
+                style="width: 100%; height: 60%; margin-bottom: 15px;"
+              >
+                <span>
+                  거짓말처럼 아 아미타
+                </span>
+              </div>
+              <div
+                style="width: 100%; height: 60%; margin-bottom: 15px;"
+              >
+                <span>
+                  (그래요 그래요 좋아요 좋아요 나예요 나예요)
+                </span>
+              </div>
+              <div
+                style="width: 100%; height: 60%; margin-bottom: 15px;"
+              >
+                <span>
+                  아미타 아미타
+                </span>
+              </div>
+              <div
+                style="width: 100%; height: 60%; margin-bottom: 15px;"
+              >
+                <span>
+                  바라지 않는 거라도 좋아
+                </span>
+              </div>
+              <div
+                style="width: 100%; height: 60%; margin-bottom: 15px;"
+              >
+                <span>
+                  (그래요 그래요 좋아요 좋아요 나예요 나예요)
+                </span>
+              </div>
+              <div
+                style="width: 100%; height: 60%; margin-bottom: 15px;"
+              >
+                <span>
+                  아미타 아미타
+                </span>
+              </div>
+              <div
+                style="width: 100%; height: 60%; margin-bottom: 15px;"
+              >
+                <span>
+                  두려워도 괜찮을 거라고
+                </span>
+              </div>
+              <div
+                style="width: 100%; height: 60%; margin-bottom: 15px;"
+              >
+                <span>
+                  (위로하는 그 소리) 거짓말
+                </span>
+              </div>
+              <div
+                style="width: 100%; height: 60%; margin-bottom: 15px;"
+              >
+                <span>
+                  (뻔한 엔딩 그 스토리)
+                </span>
+              </div>
+              <div
+                style="width: 100%; height: 60%; margin-bottom: 15px;"
+              >
+                <span>
+                  타임라인 저 아득히 아래 쌓여버리겠지
+                </span>
+              </div>
+              <div
+                style="width: 100%; height: 60%; margin-bottom: 15px;"
+              >
+                <span>
+                  처음으로 지은 표정
+                </span>
+              </div>
+              <div
+                style="width: 100%; height: 60%; margin-bottom: 15px;"
+              >
+                <span>
+                  귀엽다고 해줘요? 네
+                </span>
+              </div>
+              <div
+                style="width: 100%; height: 60%; margin-bottom: 15px;"
+              >
+                <span>
+                  거짓말 하는 건 난데
+                </span>
+              </div>
+              <div
+                style="width: 100%; height: 60%; margin-bottom: 15px;"
+              >
+                <span>
+                  회자정리인가요?
+                </span>
+              </div>
+              <div
+                style="width: 100%; height: 60%; margin-bottom: 15px;"
+              >
+                <span>
+                  슬그머니 거릴 두는 게
+                </span>
+              </div>
+              <div
+                style="width: 100%; height: 60%; margin-bottom: 15px;"
+              >
+                <span>
+                  당신이 먼저 다가왔던 건데
+                </span>
+              </div>
+              <div
+                style="width: 100%; height: 60%; margin-bottom: 15px;"
+              >
+                <span>
+                  배신감은 항상 독차지
+                </span>
+              </div>
+              <div
+                style="width: 100%; height: 60%; margin-bottom: 15px;"
+              >
+                <span>
+                  칠흑같은 관계의 색
+                </span>
+              </div>
+              <div
+                style="width: 100%; height: 60%; margin-bottom: 15px;"
+              >
+                <span>
+                  대체 언제 그렇게 발라 둔 지 몰라
+                </span>
+              </div>
+              <div
+                style="width: 100%; height: 60%; margin-bottom: 15px;"
+              >
+                <span>
+                  인생 마지막 순간인 것 처럼
+                </span>
+              </div>
+              <div
+                style="width: 100%; height: 60%; margin-bottom: 15px;"
+              >
+                <span>
+                  눈을 감고 다니잖아
+                </span>
+              </div>
+              <div
+                style="width: 100%; height: 60%; margin-bottom: 15px;"
+              >
+                <span>
+                  관계도 처럼 줄이 그어져 있어
+                </span>
+              </div>
+              <div
+                style="width: 100%; height: 60%; margin-bottom: 15px;"
+              >
+                <span>
+                  너와 나 어느 사이에
+                </span>
+              </div>
+              <div
+                style="width: 100%; height: 60%; margin-bottom: 15px;"
+              >
+                <span>
+                  뒤틀린 추억만을 공유하고 싶다면
+                </span>
+              </div>
+              <div
+                style="width: 100%; height: 60%; margin-bottom: 15px;"
+              >
+                <span>
+                  누구에게 말해야만 해?
+                </span>
+              </div>
+              <div
+                style="width: 100%; height: 60%; margin-bottom: 15px;"
+              >
+                <span>
+                  가장 바라고 가장 두려운 것은
+                </span>
+              </div>
+              <div
+                style="width: 100%; height: 60%; margin-bottom: 15px;"
+              >
+                <span>
+                  마음의 저편에
+                </span>
+              </div>
+              <div
+                style="width: 100%; height: 60%; margin-bottom: 15px;"
+              >
+                <span>
+                  두고 온 나인데 어느 새 손에 쥐어져
+                </span>
+              </div>
+              <div
+                style="width: 100%; height: 60%; margin-bottom: 15px;"
+              >
+                <span>
+                  거짓말처럼 아 아미타
+                </span>
+              </div>
+              <div
+                style="width: 100%; height: 60%; margin-bottom: 15px;"
+              >
+                <span>
+                  (그래요 그래요 좋아요 좋아요 나예요 나예요)
+                </span>
+              </div>
+              <div
+                style="width: 100%; height: 60%; margin-bottom: 15px;"
+              >
+                <span>
+                  아미타 아미타
+                </span>
+              </div>
+              <div
+                style="width: 100%; height: 60%; margin-bottom: 15px;"
+              >
+                <span>
+                  바라지 않는 거라도 좋아
+                </span>
+              </div>
+              <div
+                style="width: 100%; height: 60%; margin-bottom: 15px;"
+              >
+                <span>
+                  (그래요 그래요 좋아요 좋아요 나예요 나예요)
+                </span>
+              </div>
+              <div
+                style="width: 100%; height: 60%; margin-bottom: 15px;"
+              >
+                <span>
+                  아미타 아미타
+                </span>
+              </div>
+              <div
+                style="width: 100%; height: 60%; margin-bottom: 15px;"
+              >
+                <span>
+                  두려워도 괜찮을 거라고
+                </span>
+              </div>
+              <div
+                style="width: 100%; height: 60%; margin-bottom: 15px;"
+              >
+                <span>
+                  애써 연기를 해도 가면을 쓰고 하면 어떡해?
+                </span>
+              </div>
+              <div
+                style="width: 100%; height: 60%; margin-bottom: 15px;"
+              >
+                <span>
+                  정론이지만 해답으로선 오답인거네
+                </span>
+              </div>
+              <div
+                style="width: 100%; height: 60%; margin-bottom: 15px;"
+              >
+                <span>
+                  한 치 틀림 없이 어긋난
+                </span>
+              </div>
+              <div
+                style="width: 100%; height: 60%; margin-bottom: 15px;"
+              >
+                <span>
+                  관음 관심 관용 관세음 너와 나의 추종자가
+                </span>
+              </div>
+              <div
+                style="width: 100%; height: 60%; margin-bottom: 15px;"
+              >
+                <span>
+                  숨을 손에 품고 귀의를
+                </span>
+              </div>
+              <div
+                style="width: 100%; height: 60%; margin-bottom: 15px;"
+              >
+                <span>
+                  잃어버린 꿈에 미련은 없는거야
+                </span>
+              </div>
+              <div
+                style="width: 100%; height: 60%; margin-bottom: 15px;"
+              >
+                <span>
+                  후회는 하지만
+                </span>
+              </div>
+              <div
+                style="width: 100%; height: 60%; margin-bottom: 15px;"
+              >
+                <span>
+                  사랑했었지만 사랑받은 기억은
+                </span>
+              </div>
+              <div
+                style="width: 100%; height: 60%; margin-bottom: 15px;"
+              >
+                <span>
+                  거짓말처럼 아 아미타
+                </span>
+              </div>
+              <div
+                style="width: 100%; height: 60%; margin-bottom: 15px;"
+              >
+                <span>
+                  (그래요 그래요 좋아요 좋아요 나예요 나예요)
+                </span>
+              </div>
+              <div
+                style="width: 100%; height: 60%; margin-bottom: 15px;"
+              >
+                <span>
+                  아미타 아미타
+                </span>
+              </div>
+              <div
+                style="width: 100%; height: 60%; margin-bottom: 15px;"
+              >
+                <span>
+                  바라지 않는 거라도 좋아
+                </span>
+              </div>
+              <div
+                style="width: 100%; height: 60%; margin-bottom: 15px;"
+              >
+                <span>
+                  (그래요 그래요 좋아요 좋아요 나예요 나예요)
+                </span>
+              </div>
+              <div
+                style="width: 100%; height: 60%; margin-bottom: 15px;"
+              >
+                <span>
+                  아미타 아미타
+                </span>
+              </div>
+              <div
+                style="width: 100%; height: 60%; margin-bottom: 15px;"
+              >
+                <span>
+                  두려워도 괜찮을 거라고
+                </span>
+              </div>
+              <div
+                style="width: 100%; height: 60%; margin-bottom: 15px;"
+              >
+                <span>
+                  (위로하는 그 소리) 거짓말
+                </span>
+              </div>
+              <div
+                style="width: 100%; height: 60%; margin-bottom: 15px;"
+              >
+                <span>
+                  (뻔한 엔딩 그 스토리)
+                </span>
+              </div>
+              <div
+                style="width: 100%; height: 60%; margin-bottom: 15px;"
+              >
+                <span>
+                  타임라인 저 아득히 아래 쌓여버리겠지
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="album"
+      style="background-size: cover; background-repeat: no-repeat; background-position: center;"
+    >
+      <div
+        class="lyrics"
+        data-testid="lyrics-div"
+      >
+        <div
+          class="scroll-list-container"
+          data-testid="scrollList"
+        >
+          <div
+            class="scroll-list"
+          >
+            <div
+              style="width: 100%; height: 60%; margin-bottom: 15px;"
+            >
+              <span>
+                바라봤을 뿐인 얼굴
+              </span>
+            </div>
+            <div
+              style="width: 100%; height: 60%; margin-bottom: 15px;"
+            >
+              <span>
+                떠오르지 않나요? 네
+              </span>
+            </div>
+            <div
+              style="width: 100%; height: 60%; margin-bottom: 15px;"
+            >
+              <span>
+                꺼림칙한 건 나인데
+              </span>
+            </div>
+            <div
+              style="width: 100%; height: 60%; margin-bottom: 15px;"
+            >
+              <span>
+                신경 쓰이잖아요?
+              </span>
+            </div>
+            <div
+              style="width: 100%; height: 60%; margin-bottom: 15px;"
+            >
+              <span>
+                희미해져 가는 게
+              </span>
+            </div>
+            <div
+              style="width: 100%; height: 60%; margin-bottom: 15px;"
+            >
+              <span>
+                사라져 없어져 버린다는 게
+              </span>
+            </div>
+            <div
+              style="width: 100%; height: 60%; margin-bottom: 15px;"
+            >
+              <span>
+                망설임은 항상 내 편
+              </span>
+            </div>
+            <div
+              style="width: 100%; height: 60%; margin-bottom: 15px;"
+            >
+              <span>
+                물어 볼 수 조차 없죠
+              </span>
+            </div>
+            <div
+              style="width: 100%; height: 60%; margin-bottom: 15px;"
+            >
+              <span>
+                대체 어디로들 가는 건지 몰라
+              </span>
+            </div>
+            <div
+              style="width: 100%; height: 60%; margin-bottom: 15px;"
+            >
+              <span>
+                인생 마지막의 숨을 든 채로
+              </span>
+            </div>
+            <div
+              style="width: 100%; height: 60%; margin-bottom: 15px;"
+            >
+              <span>
+                몸을 던져 버리잖아
+              </span>
+            </div>
+            <div
+              style="width: 100%; height: 60%; margin-bottom: 15px;"
+            >
+              <span>
+                색 바랜 기록 위에 눈물 닿아도
+              </span>
+            </div>
+            <div
+              style="width: 100%; height: 60%; margin-bottom: 15px;"
+            >
+              <span>
+                빛은 돌아오지 않아
+              </span>
+            </div>
+            <div
+              style="width: 100%; height: 60%; margin-bottom: 15px;"
+            >
+              <span>
+                구겨진 기억만을 안고 살고 싶다면
+              </span>
+            </div>
+            <div
+              style="width: 100%; height: 60%; margin-bottom: 15px;"
+            >
+              <span>
+                누구에게 말해야만 해?
+              </span>
+            </div>
+            <div
+              style="width: 100%; height: 60%; margin-bottom: 15px;"
+            >
+              <span>
+                가장 바라고 가장 두려운 것은
+              </span>
+            </div>
+            <div
+              style="width: 100%; height: 60%; margin-bottom: 15px;"
+            >
+              <span>
+                마음의 저편에
+              </span>
+            </div>
+            <div
+              style="width: 100%; height: 60%; margin-bottom: 15px;"
+            >
+              <span>
+                두고 온 나인데 어느새 손에 쥐어져
+              </span>
+            </div>
+            <div
+              style="width: 100%; height: 60%; margin-bottom: 15px;"
+            >
+              <span>
+                거짓말처럼 아 아미타
+              </span>
+            </div>
+            <div
+              style="width: 100%; height: 60%; margin-bottom: 15px;"
+            >
+              <span>
+                (그래요 그래요 좋아요 좋아요 나예요 나예요)
+              </span>
+            </div>
+            <div
+              style="width: 100%; height: 60%; margin-bottom: 15px;"
+            >
+              <span>
+                아미타 아미타
+              </span>
+            </div>
+            <div
+              style="width: 100%; height: 60%; margin-bottom: 15px;"
+            >
+              <span>
+                바라지 않는 거라도 좋아
+              </span>
+            </div>
+            <div
+              style="width: 100%; height: 60%; margin-bottom: 15px;"
+            >
+              <span>
+                (그래요 그래요 좋아요 좋아요 나예요 나예요)
+              </span>
+            </div>
+            <div
+              style="width: 100%; height: 60%; margin-bottom: 15px;"
+            >
+              <span>
+                아미타 아미타
+              </span>
+            </div>
+            <div
+              style="width: 100%; height: 60%; margin-bottom: 15px;"
+            >
+              <span>
+                두려워도 괜찮을 거라고
+              </span>
+            </div>
+            <div
+              style="width: 100%; height: 60%; margin-bottom: 15px;"
+            >
+              <span>
+                (위로하는 그 소리) 거짓말
+              </span>
+            </div>
+            <div
+              style="width: 100%; height: 60%; margin-bottom: 15px;"
+            >
+              <span>
+                (뻔한 엔딩 그 스토리)
+              </span>
+            </div>
+            <div
+              style="width: 100%; height: 60%; margin-bottom: 15px;"
+            >
+              <span>
+                타임라인 저 아득히 아래 쌓여버리겠지
+              </span>
+            </div>
+            <div
+              style="width: 100%; height: 60%; margin-bottom: 15px;"
+            >
+              <span>
+                처음으로 지은 표정
+              </span>
+            </div>
+            <div
+              style="width: 100%; height: 60%; margin-bottom: 15px;"
+            >
+              <span>
+                귀엽다고 해줘요? 네
+              </span>
+            </div>
+            <div
+              style="width: 100%; height: 60%; margin-bottom: 15px;"
+            >
+              <span>
+                거짓말 하는 건 난데
+              </span>
+            </div>
+            <div
+              style="width: 100%; height: 60%; margin-bottom: 15px;"
+            >
+              <span>
+                회자정리인가요?
+              </span>
+            </div>
+            <div
+              style="width: 100%; height: 60%; margin-bottom: 15px;"
+            >
+              <span>
+                슬그머니 거릴 두는 게
+              </span>
+            </div>
+            <div
+              style="width: 100%; height: 60%; margin-bottom: 15px;"
+            >
+              <span>
+                당신이 먼저 다가왔던 건데
+              </span>
+            </div>
+            <div
+              style="width: 100%; height: 60%; margin-bottom: 15px;"
+            >
+              <span>
+                배신감은 항상 독차지
+              </span>
+            </div>
+            <div
+              style="width: 100%; height: 60%; margin-bottom: 15px;"
+            >
+              <span>
+                칠흑같은 관계의 색
+              </span>
+            </div>
+            <div
+              style="width: 100%; height: 60%; margin-bottom: 15px;"
+            >
+              <span>
+                대체 언제 그렇게 발라 둔 지 몰라
+              </span>
+            </div>
+            <div
+              style="width: 100%; height: 60%; margin-bottom: 15px;"
+            >
+              <span>
+                인생 마지막 순간인 것 처럼
+              </span>
+            </div>
+            <div
+              style="width: 100%; height: 60%; margin-bottom: 15px;"
+            >
+              <span>
+                눈을 감고 다니잖아
+              </span>
+            </div>
+            <div
+              style="width: 100%; height: 60%; margin-bottom: 15px;"
+            >
+              <span>
+                관계도 처럼 줄이 그어져 있어
+              </span>
+            </div>
+            <div
+              style="width: 100%; height: 60%; margin-bottom: 15px;"
+            >
+              <span>
+                너와 나 어느 사이에
+              </span>
+            </div>
+            <div
+              style="width: 100%; height: 60%; margin-bottom: 15px;"
+            >
+              <span>
+                뒤틀린 추억만을 공유하고 싶다면
+              </span>
+            </div>
+            <div
+              style="width: 100%; height: 60%; margin-bottom: 15px;"
+            >
+              <span>
+                누구에게 말해야만 해?
+              </span>
+            </div>
+            <div
+              style="width: 100%; height: 60%; margin-bottom: 15px;"
+            >
+              <span>
+                가장 바라고 가장 두려운 것은
+              </span>
+            </div>
+            <div
+              style="width: 100%; height: 60%; margin-bottom: 15px;"
+            >
+              <span>
+                마음의 저편에
+              </span>
+            </div>
+            <div
+              style="width: 100%; height: 60%; margin-bottom: 15px;"
+            >
+              <span>
+                두고 온 나인데 어느 새 손에 쥐어져
+              </span>
+            </div>
+            <div
+              style="width: 100%; height: 60%; margin-bottom: 15px;"
+            >
+              <span>
+                거짓말처럼 아 아미타
+              </span>
+            </div>
+            <div
+              style="width: 100%; height: 60%; margin-bottom: 15px;"
+            >
+              <span>
+                (그래요 그래요 좋아요 좋아요 나예요 나예요)
+              </span>
+            </div>
+            <div
+              style="width: 100%; height: 60%; margin-bottom: 15px;"
+            >
+              <span>
+                아미타 아미타
+              </span>
+            </div>
+            <div
+              style="width: 100%; height: 60%; margin-bottom: 15px;"
+            >
+              <span>
+                바라지 않는 거라도 좋아
+              </span>
+            </div>
+            <div
+              style="width: 100%; height: 60%; margin-bottom: 15px;"
+            >
+              <span>
+                (그래요 그래요 좋아요 좋아요 나예요 나예요)
+              </span>
+            </div>
+            <div
+              style="width: 100%; height: 60%; margin-bottom: 15px;"
+            >
+              <span>
+                아미타 아미타
+              </span>
+            </div>
+            <div
+              style="width: 100%; height: 60%; margin-bottom: 15px;"
+            >
+              <span>
+                두려워도 괜찮을 거라고
+              </span>
+            </div>
+            <div
+              style="width: 100%; height: 60%; margin-bottom: 15px;"
+            >
+              <span>
+                애써 연기를 해도 가면을 쓰고 하면 어떡해?
+              </span>
+            </div>
+            <div
+              style="width: 100%; height: 60%; margin-bottom: 15px;"
+            >
+              <span>
+                정론이지만 해답으로선 오답인거네
+              </span>
+            </div>
+            <div
+              style="width: 100%; height: 60%; margin-bottom: 15px;"
+            >
+              <span>
+                한 치 틀림 없이 어긋난
+              </span>
+            </div>
+            <div
+              style="width: 100%; height: 60%; margin-bottom: 15px;"
+            >
+              <span>
+                관음 관심 관용 관세음 너와 나의 추종자가
+              </span>
+            </div>
+            <div
+              style="width: 100%; height: 60%; margin-bottom: 15px;"
+            >
+              <span>
+                숨을 손에 품고 귀의를
+              </span>
+            </div>
+            <div
+              style="width: 100%; height: 60%; margin-bottom: 15px;"
+            >
+              <span>
+                잃어버린 꿈에 미련은 없는거야
+              </span>
+            </div>
+            <div
+              style="width: 100%; height: 60%; margin-bottom: 15px;"
+            >
+              <span>
+                후회는 하지만
+              </span>
+            </div>
+            <div
+              style="width: 100%; height: 60%; margin-bottom: 15px;"
+            >
+              <span>
+                사랑했었지만 사랑받은 기억은
+              </span>
+            </div>
+            <div
+              style="width: 100%; height: 60%; margin-bottom: 15px;"
+            >
+              <span>
+                거짓말처럼 아 아미타
+              </span>
+            </div>
+            <div
+              style="width: 100%; height: 60%; margin-bottom: 15px;"
+            >
+              <span>
+                (그래요 그래요 좋아요 좋아요 나예요 나예요)
+              </span>
+            </div>
+            <div
+              style="width: 100%; height: 60%; margin-bottom: 15px;"
+            >
+              <span>
+                아미타 아미타
+              </span>
+            </div>
+            <div
+              style="width: 100%; height: 60%; margin-bottom: 15px;"
+            >
+              <span>
+                바라지 않는 거라도 좋아
+              </span>
+            </div>
+            <div
+              style="width: 100%; height: 60%; margin-bottom: 15px;"
+            >
+              <span>
+                (그래요 그래요 좋아요 좋아요 나예요 나예요)
+              </span>
+            </div>
+            <div
+              style="width: 100%; height: 60%; margin-bottom: 15px;"
+            >
+              <span>
+                아미타 아미타
+              </span>
+            </div>
+            <div
+              style="width: 100%; height: 60%; margin-bottom: 15px;"
+            >
+              <span>
+                두려워도 괜찮을 거라고
+              </span>
+            </div>
+            <div
+              style="width: 100%; height: 60%; margin-bottom: 15px;"
+            >
+              <span>
+                (위로하는 그 소리) 거짓말
+              </span>
+            </div>
+            <div
+              style="width: 100%; height: 60%; margin-bottom: 15px;"
+            >
+              <span>
+                (뻔한 엔딩 그 스토리)
+              </span>
+            </div>
+            <div
+              style="width: 100%; height: 60%; margin-bottom: 15px;"
+            >
+              <span>
+                타임라인 저 아득히 아래 쌓여버리겠지
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

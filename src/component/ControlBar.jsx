@@ -1,6 +1,4 @@
 import {useRef, useState, useEffect} from "react";
-import Controller from "../domain/Controller";
-import Playlist from "../domain/Playlist";
 import styles from "../styles/Footer.module.css";
 import MusicPlayer from "react-h5-audio-player";
 import 'react-h5-audio-player/lib/styles.css';
