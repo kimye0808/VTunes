@@ -84,7 +84,7 @@ const ControlBar = ({
 
   const currentPlImage = imgCurrentPlClick ? currentPlClick : imgCurrentPlHover ? currentPlHover : currentPl;
   const shuffleIconImage = imgShuffleClick ? shuffleIconClick : imgShuffleHover ? shuffleIconHover : shuffleIcon;
-  const shouldDisableClick = !selectedPlaylist.list || selectedPlaylist.list.length === 0;
+  const shouldDisableClick = !selectedPlaylist.list || (selectedPlaylist.list.length === 0 && selectedPlaylist.name === "");
 
   const handleClickControlBar = () =>{
     if(isCurrentPlaylistViewed) onIsCurrentPlaylistViewed(false);
