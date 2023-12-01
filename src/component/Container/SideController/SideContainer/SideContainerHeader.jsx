@@ -20,7 +20,7 @@ const SideContainerHeader = ({selectedPlaylist, currentPlaylist, isCurrentPlayli
 
   const handleChangeName = (event)=>{
     if (event.key === "Enter" && userInput !== "") {
-      if(userInput !== "현재재생목록"){
+      if(userInput.trim() !== "현재재생목록"){
         onPlaylistName(selectedPlaylist, userInput);
       }
       setUserInput("");

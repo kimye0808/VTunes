@@ -35,7 +35,7 @@ const PlaylistSet = ({
   
     const playlistExists = listOfPlaylist&&listOfPlaylist.some(playlist => playlist.name === userInput);
   
-    if (playlistExists || userInput.trim() === "") {
+    if (playlistExists || userInput.trim() === "" || userInput.trim() === "현재재생목록") {
       setUserInput("");
       setIsAlert(true);
       setIsAddClick(true);
