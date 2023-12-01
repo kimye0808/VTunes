@@ -1,0 +1,44 @@
+.timer-setting{
+  position: relative;
+  width: 65%;
+  height: 100%;
+  margin-left: 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.button-area{
+  width: 100%;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.timer{
+  position: absolute;
+  left: 18px;
+  width: 40px;
+  height: 100%;
+}
+.timer img{
+  width: 100%;
+  height: 100%;
+  object-fit: scale-down;
+}
+
+.reset-time{
+  width: 300%;
+}
+
+.reset-time span{
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.reset img{
+  margin-top: 5%;
+  width: 90%;
+  height: 50%;
+  object-fit: scale-down;
+}

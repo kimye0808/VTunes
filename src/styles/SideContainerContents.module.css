@@ -1,0 +1,89 @@
+.side-container-contents{
+  width: 100%;
+  height: 80%;
+
+  color: #7e7e7e;
+  background-color: #E7E2E2;
+}
+
+.music-wrapper{
+  width: 100%;
+  height: 80px;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.music-wrapper:hover{
+  height: 90px;
+  background-color: #b3b3b3;
+}
+
+.delete-button-area{
+  width: 12%;
+  height: 100%;
+  margin-left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.music-album{
+  position: relative;
+  width: 10%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.music-album img{
+  width: 70%;
+  height: 70%;
+  object-fit:contain;
+}
+.overlay {
+  position: absolute;
+  top: 23%;
+  left: 14%;
+  width: 72%;
+  height: 52%;
+  background: rgba(0, 0, 0, 0.5); 
+  z-index: 1; 
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.overlay img{
+  width: 70%;
+  height: 70%;
+  object-fit: contain;
+}
+
+.music-info{
+  position: relative;
+  width: 50%;
+  height: 100%;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
+  white-space: nowrap;       /* 텍스트를 한 줄에 표시 */
+  overflow: hidden;          /* 넘치는 부분을 숨김 */
+  text-overflow: ellipsis;   /* 넘치는 부분에 ... 표시 */
+  .name{
+    color: #000;
+    font-weight: 600;
+    margin-left: 20px;
+  }
+  .artist{
+    margin-left: 20px;
+  }
+}
+.music-duration{
+  position: relative;
+  width: 12%;
+  left: 10px;
+}

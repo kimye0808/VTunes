@@ -1,0 +1,43 @@
+.footer{
+  position: relative;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+
+}
+
+.button-area{
+  position: absolute;
+  left:10px;
+  top: 88px;
+  width: 120px;
+  height: 36px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+}
+
+.button-area img{
+  width: 30%;
+  height: 65%;
+  object-fit: contain;
+}
+
+.current-playlist-menu{
+  position: absolute;
+  width: 40px;
+  height: 36px;
+  left: 72px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.current-playlist-menu img{
+  width: 62%;
+  height: 62%;
+  object-fit: contain;
+}
+
+
+
